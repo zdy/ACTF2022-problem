@@ -1,0 +1,5 @@
+﻿  flag.cpp
+C:\Users\P1n9\source\repos\flag\flag\flag.cpp(63,15): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\P1n9\source\repos\flag\flag\flag.cpp(100,20): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\P1n9\source\repos\flag\flag\flag.cpp(598,39): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  flag.vcxproj -> C:\Users\P1n9\source\repos\flag\x64\Debug\flag.exe

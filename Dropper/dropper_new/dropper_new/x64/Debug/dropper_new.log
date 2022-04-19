@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(dropper_new.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  dropper.cpp
+C:\Users\P1n9\source\repos\dropper_new\dropper_new\dropper.cpp(7,1): warning C4005: “UNICODE”: 宏重定义
+C:\Users\P1n9\source\repos\dropper_new\dropper_new\dropper.cpp : message : 参见“UNICODE”的前一个定义
+C:\Users\P1n9\source\repos\dropper_new\dropper_new\dropper.cpp(15,9): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+C:\Users\P1n9\source\repos\dropper_new\dropper_new\dropper.cpp(443,44): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  dropper_new.vcxproj -> C:\Users\P1n9\source\repos\dropper_new\x64\Debug\dropper.exe

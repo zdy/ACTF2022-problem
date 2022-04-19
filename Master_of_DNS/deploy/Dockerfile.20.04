@@ -1,0 +1,39 @@
+FROM ubuntu:20.04
+
+RUN sed -i "s/http:\/\/archive.ubuntu.com/http:\/\/mirrors.ustc.edu.cn/g" /etc/apt/sources.list && \
+    apt-get update && apt-get -y dist-upgrade && \
+    apt-get install -y lib32z1 net-tools wget execline
+
+RUN useradd -m ctf
+
+WORKDIR /home/ctf
+
+RUN mkdir /home/ctf/usr &&\
+    cp -R /usr/lib* /home/ctf/usr &&\
+    cp -R /lib* /home/ctf
+    
+RUN mkdir /home/ctf/dev && \
+    mkdir /log && \
+    mknod /home/ctf/dev/null c 1 3 && \
+    mknod /home/ctf/dev/zero c 1 5 && \
+    mknod /home/ctf/dev/random c 1 8 && \
+    mknod /home/ctf/dev/urandom c 1 9 && \
+    chmod 666 /home/ctf/dev/*
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN mkdir /home/ctf/bin && \
+    cp /bin/sh /home/ctf/bin && \
+    cp /bin/ls /home/ctf/bin && \
+    cp /bin/cat /home/ctf/bin
+
+COPY ./start.sh /home/ctf/start.sh
+COPY ./dns /home/ctf/dns
+COPY ./dns.conf /home/ctf/dns.conf
+COPY ./flag /flag
+RUN chown -R ctf:ctf /home/ctf/start.sh /home/ctf/dns && rm /home/ctf/.profile /home/ctf/.bashrc /home/ctf/.bash_logout && chmod +x /home/ctf/start.sh /home/ctf/dns && chown ctf:ctf /home/ctf
+USER ctf
+CMD ["/home/ctf/start.sh"]
+
+EXPOSE 9999
+
+
